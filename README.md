@@ -4,10 +4,12 @@
 
 ## **Overview**
 This is a simple **To-Do List application** built in **Java**. It allows users to:
-✅ **Add tasks**  
-✅ **View tasks**  
-✅ **Remove tasks**  
-✅ **Exit the application**  
+**Add tasks**  
+**View tasks**  
+**Remove tasks**  
+**Exit the application**
+
+**New Feature:** Change the Priority levels of a task
 
 This project demonstrates **basic Java programming concepts**, including:
 - **ArrayLists** for storing tasks
@@ -23,11 +25,8 @@ This project demonstrates **basic Java programming concepts**, including:
 - **View Tasks:** Displays all current tasks in the list.
 - **Remove Task:** Users can delete a task by specifying its number.
 - **Exit Program:** Safely exits the application.
+- **Newly Implemented Feature**
+    - **Change Prioirty:** Allows the user to change the priority of any task to High, Medium, or Low.
 
----
-
-## **Installation & Setup**
-### **Prerequisites**
-Ensure you have the following installed on your system:
-- **Java Development Kit (JDK)** (Version 8 or later)
-- A **Java IDE** (Eclipse, IntelliJ IDEA, or VS Code) or a terminal with Java installed
+## **Author**
+Adam Sotelo

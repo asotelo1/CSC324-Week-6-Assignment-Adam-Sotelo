@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 2. View tasks
  * 3. Remove tasks
  * 4. Exit the program
- *
+ * 5. Add prioritization to tasks
  * Uses an ArrayList to store tasks and Scanner for user input.
  */
 public class ToDoListApp {
@@ -26,6 +26,7 @@ public class ToDoListApp {
             System.out.println("2. View Tasks");
             System.out.println("3. Remove Task");
             System.out.println("4. Exit");
+            System.out.println("5. Priority");
             System.out.print("Enter choice: ");
 
             // Read user input (menu choice)
@@ -38,6 +39,7 @@ public class ToDoListApp {
                 case 2 -> viewTasks(); // Call method to display tasks
                 case 3 -> removeTask(scanner); // Call method to remove a task
                 case 4 -> System.out.println("Exiting..."); // Exit message
+                case 5 -> taskPriority(scanner);
                 default -> System.out.println("Invalid choice. Try again."); // Handle invalid input
             }
         } while (choice != 4); // Loop until user selects option 4 (Exit)
@@ -88,6 +90,31 @@ public class ToDoListApp {
             System.out.println("Task removed."); // Confirmation message
         } else {
             System.out.println("Invalid task number."); // Handle invalid input
+        }
+    }
+
+    private static void taskPriority(Scanner scanner) {
+        viewTasks(); // Show tasks first
+
+        if (tasks.isEmpty()) return;
+
+        System.out.print("Enter task number to set priority: ");
+        int index = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+
+        if (index > 0 && index <= tasks.size()) {
+            System.out.print("Enter priority (low, medium, high): ");
+            String priority = scanner.nextLine().toLowerCase();
+
+            if (priority.equals("low") || priority.equals("medium") || priority.equals("high")) {
+                String updatedTask = tasks.get(index - 1) + " (Priority: " + priority + ")";
+                tasks.set(index - 1, updatedTask);
+                System.out.println("Priority updated");
+            } else {
+                System.out.println("Invalid priority level");
+            }
+        } else {
+            System.out.println("Invalid task number");
         }
     }
 }
